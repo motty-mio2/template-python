@@ -18,21 +18,21 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Dependencies
+      - name: Update pip
         run: |
-          sudo apt remove python3-pip
           python -m pip install --upgrade pip
-          python -m pip install . black flake8 isort mypy
-          pip list
-      - name: Run Tests
+      - name: Install Dependency
+        run: |
+          pip install poetry
+          poetry install --no-interaction
+          pip install black flake8 isort mypy
+      - name: Lint with flake8
         run: |
           flake8 .
-      - name: Type Checker
-        # Check wheather the imports were sorted correctly.
-        # When this fails, please run ./tools/sort-imports.sh
+      - name: Formatting
         run: |
-          mypy --strict src/prompt_toolkit --platform win32
-          mypy --strict src/prompt_toolkit --platform linux
-          mypy --strict src/prompt_toolkit --platform darwin
-          isort -c --profile black
-          black
+          mypy --strict src --platform win32
+          mypy --strict src --platform linux
+          mypy --strict src --platform darwin
+          isort -c .
+          black .

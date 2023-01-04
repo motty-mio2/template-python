@@ -1,8 +1,12 @@
 [tool.poetry]
 name = "template-python"
-version = ""
+version = "0.1.0"
 description = ""
 authors = ["motty.mio2 <motty.mio2@gmail.com>"]
+packages = [
+    { include = "src" },
+    { include = "test" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -28,5 +32,5 @@ max-complexity = 18
 ignore = "E266,E402"
 
 [tool.isort]
-profile = black
+profile = "black"
 lines_after_imports = 2
