@@ -1,2 +1,2 @@
-def echo(txt: str = "Hello") -> None:
-    print(txt)
+def echo(txt: str = "Hello") -> str:
+    return txt
