@@ -3,6 +3,7 @@ name = "template-python"
 version = "0.1.0"
 description = ""
 authors = ["motty.mio2 <motty.mio2@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
