@@ -21,7 +21,6 @@ pytest = "^7.2.0"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-
 [tool.black]
 line-length = 120
 target-version = ['py310']
@@ -34,6 +33,9 @@ ignore = "E266,E402"
 [tool.isort]
 profile = "black"
 lines_after_imports = 2
+
+[tool.mypy]
+strict = "true"
 
 [tool.ruff]
 line-length = 120
