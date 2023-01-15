@@ -1,10 +1,10 @@
-from template_python import common as c
+from template_python.common import func as f
 
 
 def test_echo() -> None:
-    assert c.echo() == "Hello"
+    assert f.echo() == "Hello"
 
 
 def test_echo_word() -> None:
     word: str = "test"
-    assert c.echo(txt=word) == word
+    assert f.echo(txt=word) == word
