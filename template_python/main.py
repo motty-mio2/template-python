@@ -8,8 +8,13 @@ fake = Faker("jp-JP")
 
 
 @app.get("/")
-def read_root() -> dict[str, str]:
-    return {"H": fake.name()}
+def greet() -> dict[str, str]:
+    return {"message": "hello"}
+
+
+@app.get("/name")
+def get_name() -> dict[str, str]:
+    return {"name": fake.name()}
 
 
 if __name__ == "__main__":

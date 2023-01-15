@@ -24,11 +24,10 @@ jobs:
       - name: Install Dependency
         run: |
           pip install poetry
-          poetry install --no-interaction
-          pip install black flake8 isort mypy
-      - name: Lint with flake8
+          poetry install
+      - name: Lint with ruff
         run: |
-          flake8 .
+          ruff .
       - name: Formatting
         run: |
           mypy . --strict --platform win32

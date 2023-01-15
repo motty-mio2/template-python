@@ -12,5 +12,5 @@ test:
 	poetry run pytest .
 
 api:
-	curl localhost:8080/
+	curl localhost:8080/ && curl localhost:8080/name
 
