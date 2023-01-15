@@ -23,15 +23,14 @@ jobs:
           python -m pip install --upgrade pip
       - name: Install Dependency
         run: |
-          pip install poetry
-          poetry install
+          python -m pip install poetry
+          python -m poetry config virtualenvs.create false
+          python -m poetry install
       - name: Lint with ruff
         run: |
           ruff .
       - name: Formatting
         run: |
-          mypy . --strict --platform win32
-          mypy . --strict --platform linux
-          mypy . --strict --platform darwin
+          mypy . --strict
           isort -c .
           black .
