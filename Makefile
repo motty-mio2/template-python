@@ -14,3 +14,8 @@ test:
 api:
 	curl localhost:8080/ && curl localhost:8080/name
 
+start:
+	docker compose up -d
+
+stop:
+	docker compose down
