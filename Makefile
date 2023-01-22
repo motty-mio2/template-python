@@ -1,12 +1,8 @@
-lint:
-	poetry run ruff .
-
 format:
+	poetry run ruff . --fix --exit-zero
 	poetry run black .
 	poetry run isort .
-	poetry run mypy . --strict --platform win32
-	poetry run mypy . --strict --platform linux
-	poetry run mypy . --strict --platform darwin
+	poetry run mypy . --strict
 
 test:
 	poetry run pytest .
