@@ -12,10 +12,9 @@ RUN python -m pip install poetry && \
 # apt-get clean  &&\
 # rm -rf /var/lib/apt/lists/*
 
-CMD ["bash"]
-
 FROM python:3.10-slim as pycontainer
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONUNBUFFERED=1\
+    PYTHONPATH=/src
 
 ARG UID=123
 ARG GID=123

@@ -16,5 +16,5 @@ services:
     volumes:
       - ./template_python:/src/template_python
       - ./log:/log
-    command: bash -c "python -m pip install -q -e /src/ && python /src/template_python/main.py"
+    command: python /src/template_python/main.py
 
