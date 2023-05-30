@@ -1,8 +1,8 @@
 format:
-	poetry run ruff . --fix --exit-zero
-	poetry run black .
-	poetry run isort .
-	poetry run mypy . --strict
+	- poetry run ruff . --fix --exit-zero
+	- poetry run black .
+	- poetry run isort .
+	- poetry run mypy . --strict
 
 test:
 	poetry run pytest .
