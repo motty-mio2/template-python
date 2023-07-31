@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.10"
 Faker = "^18.10.1"
 fastapi = "^0.96.0"
-uvicorn = "^0.20.0"
+uvicorn = "^0.23.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.3.0"
